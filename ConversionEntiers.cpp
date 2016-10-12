@@ -23,30 +23,30 @@ const string alphanum = {"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"};
 
 int main()
 {   
-    long long int nbEntierChoisi, quotient, quotienIntermediaire;
+    long long int nbEntierChoisi, quotient, quotientIntermediaire;
     int base, reste;
     string resultat;
     
-    cout << "Entrez un nombre entier : ";
+    cout << "Entrez un nombre entier" << endl;
     cin >> nbEntierChoisi;
     
-    quotienIntermediaire = nbEntierChoisi;
+    quotientIntermediaire = nbEntierChoisi;
     
-    cout << endl << "Entrez une base : ";
+    cout << "Entrez une base" << endl;
     cin >> base;
   
     do
     {
 
-    quotient = quotienIntermediaire / base;
-    reste = quotienIntermediaire % base;
-    quotienIntermediaire = quotient;
+    quotient = quotientIntermediaire / base;
+    reste = quotientIntermediaire % base;
+    quotientIntermediaire = quotient;
     resultat = alphanum[reste] + resultat;
     
     }while(quotient);
     
-    cout << endl << nbEntierChoisi << " en base " 
+    cout << nbEntierChoisi << " en base " 
          << base << " s'ecrit " << resultat << endl;
 
-   return 0;
+   return EXIT_SUCCESS;
 }
