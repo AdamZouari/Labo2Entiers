@@ -16,8 +16,6 @@
  */
 #include <iostream>
 #include <cstdlib>
-#include <cmath>
-#include <string>
 
 using namespace std;
 
@@ -39,7 +37,7 @@ int main()
   
     do
     {
-      
+
     quotient = quotienIntermediaire / base;
     reste = quotienIntermediaire % base;
     quotienIntermediaire = quotient;
@@ -47,7 +45,8 @@ int main()
     
     }while(quotient);
     
-    cout << endl << nbEntierChoisi << " en base " << base << " s'ecrit " << resultat << endl;
+    cout << endl << nbEntierChoisi << " en base " 
+         << base << " s'ecrit " << resultat << endl;
 
    return 0;
 }
