@@ -16,6 +16,7 @@
  */
 #include <iostream>
 #include <cstdlib>
+#include <cmath>
 
 using namespace std;
 
@@ -23,30 +24,36 @@ const string alphanum = {"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"};
 
 int main()
 {   
-    long long int nbEntierChoisi, quotient, quotienIntermediaire;
-    int base, reste;
+    long long int nbEntierChoisi, quotient, quotientIntermediaire;
+    int base, reste, negatif;
     string resultat;
     
     cout << "Entrez un nombre entier : ";
     cin >> nbEntierChoisi;
     
-    quotienIntermediaire = nbEntierChoisi;
+    if(nbEntierChoisi < 0)
+    {
+        nbEntierChoisi = abs(nbEntierChoisi);
+        negatif = 1;
+    }
     
-    cout << endl << "Entrez une base : ";
+    quotientIntermediaire = nbEntierChoisi;
+    
+    cout << endl << "Entrez une base (de 2 a 36): ";
     cin >> base;
   
     do
     {
 
-    quotient = quotienIntermediaire / base;
-    reste = quotienIntermediaire % base;
-    quotienIntermediaire = quotient;
+    quotient = quotientIntermediaire / base;
+    reste = quotientIntermediaire % base;
+    quotientIntermediaire = quotient;
     resultat = alphanum[reste] + resultat;
     
     }while(quotient);
     
     cout << endl << nbEntierChoisi << " en base " 
-         << base << " s'ecrit " << resultat << endl;
-
+         << base << " s'ecrit " << (negatif? "-" :"") << resultat << endl;
+    
    return 0;
 }
