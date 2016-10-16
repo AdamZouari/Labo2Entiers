@@ -25,7 +25,7 @@ const string alphanum = {"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"};
 int main()
 {   
     long long int nbEntierChoisi, quotient, quotientIntermediaire;
-    int base, reste, negatif;
+    int base, reste, negatif = 0;
     string resultat;
     
     cout << "Entrez un nombre entier : ";
