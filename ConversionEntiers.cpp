@@ -52,7 +52,7 @@ int main()
     
     }while(quotient);
     
-    cout << endl << nbEntierChoisi << " en base " 
+    cout << endl << (negatif? "-" :"") << nbEntierChoisi << " en base " 
          << base << " s'ecrit " << (negatif? "-" :"") << resultat << endl;
     
    return 0;
