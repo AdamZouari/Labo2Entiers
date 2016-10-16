@@ -19,7 +19,7 @@
 #include <cmath>
 
 using namespace std;
-
+// Constante utilisée pour les bases > 10
 const string alphanum = {"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"};
 
 int main()
@@ -27,10 +27,10 @@ int main()
     long long int nbEntierChoisi, quotient, quotientIntermediaire;
     int base, reste, negatif = 0;
     string resultat;
-    
+    // Saisie utilisateur
     cout << "Entrez un nombre entier : ";
     cin >> nbEntierChoisi;
-    
+    // Nécessaire pour les nombres négatifs
     if(nbEntierChoisi < 0)
     {
         nbEntierChoisi = abs(nbEntierChoisi);
@@ -41,18 +41,16 @@ int main()
     
     cout << endl << "Entrez une base (de 2 a 36): ";
     cin >> base;
-  
+    // Calcul de la partie entière
     do
     {
-
     quotient = quotientIntermediaire / base;
     reste = quotientIntermediaire % base;
     quotientIntermediaire = quotient;
-    resultat = alphanum[reste] + resultat;
-    
+    resultat = alphanum[reste] + resultat; 
     }while(quotient);
     
-
+    // Affichage du résultat
     cout << endl << (negatif? "-" :"") << nbEntierChoisi << " en base " 
          << base << " s'ecrit " << (negatif? "-" :"") << resultat << endl;
     
